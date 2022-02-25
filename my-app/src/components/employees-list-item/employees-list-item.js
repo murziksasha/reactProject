@@ -5,7 +5,8 @@ class Employeeslistitem extends Component{
   constructor(props){
     super(props);
     this.state={
-      increase: false
+      increase: false,
+      favor: false
     }
   }
 
@@ -16,17 +17,31 @@ class Employeeslistitem extends Component{
 
   }
 
+    onFavor = ()=>{
+      this.setState(({favor}) =>({
+        favor: !favor
+      }))
+
+  }
+
 
   render(){
     const {name, salary} = this.props;
     const {increase} = this.state;
+    const {favor} = this.state;
+
     let classNames = "list-group-item d-flex justify-content-between";
     if(increase) {
       classNames +=" increase";
     }
+
+    if(favor) {
+      classNames +=" like";
+    }
     return (
       <li className={classNames}>
-        <span className="list-group-item-label">
+        <span className="list-group-item-label"
+        onClick={this.onFavor}>
           {name}
         </span>
         <input type="text" className="list-group-item-input" 
