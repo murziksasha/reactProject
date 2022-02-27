@@ -1,20 +1,32 @@
-
+import {Component} from 'react';
 import './employees-add-form.css';
 
-const EmployeesAddForm = ()=>{
-  return (
-  <div className="app-add-form">
-    <h3>Добавьте сотрудника</h3>
-    <form className="add-form d-flex">
-      <input type="text" className="form-control new-post-label" 
-      placeholder='Как его зовут?'/>
-      <input type="number" className="form-control new-post-label" 
-      placeholder=' З\п в $ ?'/>
+class EmployeesAddForm extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      name: '',
+      salary: 0
+    }
+  }
 
-      <button className="btn btn-outline-light">Добавить</button>
-    </form>
-  </div>
-  );
+  render(){
+    return (
+      <div className="app-add-form">
+        <h3>Добавьте сотрудника</h3>
+        <form className="add-form d-flex">
+          <input type="text" className="form-control new-post-label" 
+          placeholder='Как его зовут?'
+          onChange={e=>console.log(e)}/>
+          <input type="number" className="form-control new-post-label" 
+          placeholder=' З\п в $ ?'
+          onChange={e=>console.log(e)}/>
+    
+          <button className="btn btn-outline-light">Добавить</button>
+        </form>
+      </div>
+      );
+  }
 }
 
 export default EmployeesAddForm;
