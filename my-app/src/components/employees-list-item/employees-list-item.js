@@ -33,7 +33,7 @@ class Employeeslistitem extends Component{
 
 
   render(){
-    const {name, salary} = this.props;
+    const {name, salary, onDelete} = this.props;
 
     const {increase} = this.state;
     const {favor} = this.state;
@@ -66,7 +66,8 @@ class Employeeslistitem extends Component{
             <i className="fas fa-cookie"></i>
           </button>
   
-          <button className="btn-trash btn-sm" type='button'>
+          <button className="btn-trash btn-sm" type='button'
+          onClick={onDelete}>
             <i className="fas fa-trash"></i>
           </button>
           <i className="fas fa-star"></i>
