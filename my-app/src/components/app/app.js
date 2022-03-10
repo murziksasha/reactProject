@@ -36,9 +36,12 @@ class App extends Component {
       favor: false,
       id: this.maxId++
     }
-    this.setState(({data}) => ({
-
-    }))
+    this.setState(({data}) => {
+      const newArr = [...data, newItem];
+      return {
+          data: newArr
+      }
+    });
   }
 
   onToggleProp = (id, prop) => {
