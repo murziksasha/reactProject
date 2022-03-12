@@ -14,7 +14,6 @@ const EmployeesItem = ({data, onDelete, onToggleProp})=>{
     );
   });
 
-console.log(elements);
   return (
     <ul className="app-list list-group">
       {elements}
